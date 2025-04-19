@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python HTTP Server Lesson</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Building a Basic Python HTTP Server</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Objective</h2>
+            <p>Learn how to create and run a basic HTTP server using Python's <code>http.server</code> module.</p>
+        </section>
+        <section>
+            <h2>Code</h2>
+            <pre><code>
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler):
+    server_address = ('0.0.0.0', 5000)
+    httpd = server_class(server_address, handler_class)
+    print("Server running at http://0.0.0.0:5000/")
+    httpd.serve_forever()
+
+if __name__ == '__main__':
+    run()
+            </code></pre>
+        </section>
+        <section>
+            <h2>Steps to Run</h2>
+            <ol>
+                <li>Save the code as <code>server.py</code>.</li>
+                <li>Run <code>python server.py</code> in the terminal.</li>
+                <li>Visit <a href="http://localhost:5000" target="_blank">http://localhost:5000</a>.</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>Created as part of a Python tutorial.</p>
+    </footer>
+</body>
+</html>
